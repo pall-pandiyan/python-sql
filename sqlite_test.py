@@ -28,11 +28,12 @@ def print_all_records():
     sql_cmd = "select uid, name, address from teacher;"
     cur.execute(sql_cmd)
     teachers = cur.fetchall()
-    print(f"teacher: {teachers}")
+    # print(f"teacher: {teachers}")
+    print(f"count of teacher: {len(teachers)}")
 
 
-print("creating the teacher table")
-create_teacher_table()
+# print("creating the teacher table")
+# create_teacher_table()
 
 print("adding records:")
 add_record_teacher("Ramesh", "1 First Street")
@@ -42,4 +43,5 @@ add_record_teacher("Kumar", "3 Third avenue")
 print("print all records of teacher table:")
 print_all_records()
 
+conn.commit()
 conn.close()
